@@ -1,0 +1,42 @@
+# version: "3.9"
+# services:
+#   db:
+#     image: postgres:13.4
+#     restart: always
+#     environment:
+#       POSTGRES_USER: postgres
+#       POSTGRES_PASSWORD: admin
+#       POSTGRES_DB: seatwo
+#     ports:
+#       - "1337:5432"
+#     volumes:
+#       - "./db/1.sql:/docker-entrypoint-initdb.d/1.sql"
+
+
+networks:
+    pg-network:
+        external: true
+
+services:
+  postgres:
+    image: postgres:13.4
+    container_name: c2-db
+    environment:
+      POSTGRES_DB: seatwo
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "1337:5432"
+    networks:
+      - pg-network
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pg-admin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin_password
+    ports:
+      - "5050:80"
+    networks:
+      - pg-network
