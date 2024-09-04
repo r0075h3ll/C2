@@ -1,17 +1,19 @@
-## Welcome
+## Setup
 
-[rick](https://w.wallhaven.cc/full/n6/wallhaven-n6rgrq.png)
+#### plug wires
 
-Ongoing dev. changes related to the framework will be pushed to the `develop` branch. 
+Needs Python>=3.11.8
 
-## Features
+```bash
+pip3 install -r requirements.txt
+```
 
-- [ ] Stealth
-- [ ] Handle client connections concurrently
-- [ ] Compute and Memory Intensive 
-- [ ] Aesthetic UI
+#### boot servers
 
+```bash
+docker compose up # boot the db
+source venv/bin/activate
+sanic server # start server
+```
 
-## Contributions
-
-The project is not open to any PR/Issues until its first release.
+API doc. can be viewed at `http://localhost:8000/docs`
