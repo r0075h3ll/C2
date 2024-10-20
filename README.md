@@ -14,4 +14,4 @@ Ongoing dev. changes related to the framework will be pushed to the `develop` br
 
 ## Contributions
 
-The project is not open to any PR/Issues until its first release.
+The project is not open to any PR/Issues until its first release, unless its related to C2 implants and you've a fair bit of experience in malware development.
